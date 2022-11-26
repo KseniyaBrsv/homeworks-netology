@@ -2,9 +2,14 @@ import '../App.css';
 
 export const ProjectList = ({projects}) => {
   return (
-    <li>
-      <img src={projects.img} alt="" />
-    </li>
+    <ul>
+      {projects.map((el, index) => {
+        return (<li key={index}>
+          <img src={el.img} alt="" />
+        </li>
+        )
+      })}
+    </ul>
   )
 }
 

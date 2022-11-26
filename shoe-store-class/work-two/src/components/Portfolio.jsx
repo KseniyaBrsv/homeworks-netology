@@ -72,7 +72,14 @@ const category = [{
 class Portfolio extends React.Component {
   state = {
     filters: category,
+    projects: projects,
     selected: 'All',
+  };
+
+  onSelectFilter = (filter) => {
+    this.setState({ selected: filter });
+    if (filter === 'All') return this.setState({projects: projects});
+    this.setState({projects: projects.filter((item) => item.category === filter)});
   };
 
 
@@ -81,12 +88,9 @@ class Portfolio extends React.Component {
       <>
         <Toolbar
           filters={this.state.filters}
-          onSelectFilter={(filter) => this.setState({ selected: filter })}
+          onSelectFilter={this.onSelectFilter}
         />
-        <ul>
-          {projects.map((el, index) =>
-            ((this.state.selected === el.category || this.state.selected === 'All') && <ProjectList key={index} projects={el}/>))}
-        </ul>
+        <ProjectList projects={this.state.projects}/>
       </>
     )
   }
