@@ -1,0 +1,40 @@
+@import url(https://fonts.googleapis.com/css?family=Muli:400,300italic,300,400italic);
+
+body,
+html {
+  font-family: muli;
+  height: 100%;
+  width: 70%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+.but {
+  padding: 3px;
+}
+
+ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+li {
+  list-style-type: none;
+}
+
+.container {
+  padding-top: 5%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+button {
+  border-radius: 2px;
+  padding: 5px;
+}
