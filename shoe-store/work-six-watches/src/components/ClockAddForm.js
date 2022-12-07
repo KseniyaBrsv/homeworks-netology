@@ -34,7 +34,7 @@ export const ClockAddForm = ({ onSubmitHandler }) => {
                 onChange={(e) => onChangeHandler(e.target.value)}
                 value={city.value}
               >
-                <option hidden>Select a city from this select menu</option>
+                <option hidden>Выберите город</option>
                 {cities.map((city) => (
                   <option
                     key={uniqueId('city_')}
