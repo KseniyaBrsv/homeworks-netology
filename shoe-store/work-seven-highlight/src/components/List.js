@@ -4,19 +4,18 @@ import {New} from "./New";
 import {Popular} from "./Popular";
 
 const setHighlight = (Component) => {
-  return (props) => {
-    return props.views >= 1000 ? (
-      <Popular>
+  const Wrapper = (props) => {
+    if(props.views >= 1000) {
+      return <Popular>
         <Component {...props} />
       </Popular>
-    ) : props.views >= 100 ? (
-      <New>
-        <Component {...props} />
-      </New>
-    ) : (
-      <Component {...props} />
-    );
-  };
+    } else if(props.views >= 100) {
+      return  <New>
+             <Component {...props} />
+              </New>
+    } else return <Component {...props} />
+  }
+  return Wrapper;
 };
 
 const UpgArticle = setHighlight(Article);
