@@ -4,6 +4,7 @@ import {Link, useParams} from "react-router-dom";
 const PostView = ({posts, deletePost}) => {
   let { postId } = useParams();
   let post = posts.find(p => parseInt(p.id) === parseInt(postId));
+
   return (
     <div className="post">
       <div style={{display: 'flex'}}>
@@ -14,7 +15,7 @@ const PostView = ({posts, deletePost}) => {
       <hr/>
       <p>{post.content}</p>
       <hr/>
-      <Link className="button" to={"/posts/" + post.id + "/edit"}>Изменить</Link>
+      <Link className="button" to={"/posts/" + post.id + "/edit"} state={{contentPost: post.content}}>Изменить</Link>
       <button className="button danger" onClick={e => deletePost(e, post.id)}>Удалить</button>
     </div>
   );

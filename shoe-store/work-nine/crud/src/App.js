@@ -43,8 +43,8 @@ const App = () => {
     <Routes>
       <Route path="/" element={<Posts posts={posts} />}/>
       <Route path="/post/:postId" element={<PostView posts={posts} deletePost={deletePost}/>}/>
-      <Route path="/posts/:postId/edit" element={<PostSave savePost={savePost}/>}/>
-      {!isRemove && <Route path="/posts/new" element={<PostSave savePost={savePost} setRemove={setRemove} value={0}/>}/>}
+      <Route path="/posts/:postId/edit" element={<PostSave savePost={savePost} setRemove={setRemove} />}/>
+      {!isRemove && <Route path="/posts/new" element={<PostSave savePost={savePost} setRemove={setRemove} value={0} />}/>}
       <Route path="*" element={<Posts posts={posts}/>}/>
     </Routes>
   );
